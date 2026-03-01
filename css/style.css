@@ -1,0 +1,310 @@
+* {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    html {
+        background-color: rgb(230, 238, 245);
+        font-size: 10px;
+    }
+    .container {
+            width: 95%; /* Küçük ekranlarda kenarlardan %5 pay bırakır */
+            max-width: 1100px; /* Büyük ekranlarda bu genişliği geçmez */
+            margin: 0 auto; /* Üst-Alt: 0, Sağ-Sol: Otomatik (ORTALAR) */
+            
+            /* İçerikleri yan yana dizmek için ekleyelim: */
+            display: flex;
+            justify-content: space-between; /* Logo solda, Menü sağda kalsın */
+            align-items: center; /* Dikeyde birbirlerine göre ortalar */
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+    
+        header {
+            background-color: beige;
+        }
+        .navbar ul {
+            display: flex;
+            
+        }
+        .navbar li {
+            padding: 5px;
+        }
+        .navbar a {
+            color: rgb(255, 255, 255);
+            padding: 0.5rem 1rem;
+            font-size: 20px;
+        }
+
+        .btn {
+            border: 1px  solid black;
+            border-radius: 10%;
+            background-color: rgb(1, 1, 95);
+            transition: .6s;
+            padding: 1rem;
+        }
+
+        
+        .btn:hover {
+            border: 1px solid black;
+            padding: 7px;
+            border-radius: 10%;
+            background-color: rgb(255, 153, 153);
+        }
+
+        #background {
+        /* Resmi doğrudan buraya arka plan yapıyoruz */
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(haber-2.png);
+        background-size: cover;
+        background-position: center;
+        height: 60vh; /* Yüksekliği biraz artırdık daha şık durur */
+        width: 100%;
+
+        /* FLEXBOX BÜYÜSÜ BURADA */
+        display: flex;
+        flex-direction: column; /* Yazıları alt alta dizer */
+        justify-content: center; /* Dikeyde ortalar */
+        align-items:  center;    /* Yatayda ortalar */
+        text-align: start;     /* Metni kendi içinde ortalar */
+        padding: 2rem;
+    }
+    
+
+    #back-text {
+        color: white;
+        margin-left: 15rem;
+        padding: 2rem;
+    }
+    #back-text h1 {
+        font-size: 3rem;
+    }
+
+    #back-text p {
+        font-size: 2rem;
+        margin-top: 1rem;
+        
+        width: 50%;
+
+    }
+
+    #back-text button {
+        padding: 1rem;
+        margin-top: 1rem;
+        color: white;
+    }
+
+    .news {
+        display: grid;
+        grid-template-columns: repeat(3 / 1fr);
+    }
+    .container-grid {
+            width: 90%; /* Küçük ekranlarda kenarlardan %5 pay bırakır */
+            max-width: 1100px; /* Büyük ekranlarda bu genişliği geçmez */
+            margin: 0 auto; /* Üst-Alt: 0, Sağ-Sol: Otomatik (ORTALAR) */
+            
+            /* İçerikleri yan yana dizmek için ekleyelim: */
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+    }
+    .news {
+        width: 100%;
+    }
+    .news img {
+        /* Buradaki genişlik ve yüksekliği istediğin gibi sabitleyebilirsin */
+        width: 35rem; 
+        height: 30rem;
+        
+        /* Fotoğraf ne olursa olsun kutuya sığdırır ve sünmesini engeller */
+        object-fit: cover; 
+        
+        border-radius: 4px;
+        flex-shrink: 0; /* Fotoğrafın daralmasını engeller */
+    }
+    .news ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-top: 1rem;
+               
+    }
+    
+    .news li {
+    background: white;
+    padding: 1.5rem;
+    border-bottom: 2px solid #ddd; /* Gazete çizgisi */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .news h3 {
+        font-size: 2.8rem;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+    }
+
+    .news p {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #444;
+    }
+    
+    .footer-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 1rem;
+        
+    }
+
+    .footer-wrapper div {
+        margin-left: 1rem;
+        padding: 1.7rem;
+    }
+
+    .footer-form {
+        display: grid;
+        
+    }
+    .container-footer {
+            width: 90%; /* Küçük ekranlarda kenarlardan %5 pay bırakır */
+            max-width: 1100px; /* Büyük ekranlarda bu genişliği geçmez */
+            margin: 0 auto; /* Üst-Alt: 0, Sağ-Sol: Otomatik (ORTALAR) */
+            
+            /* İçerikleri yan yana dizmek için ekleyelim: */
+            display: grid;
+            margin-top: 1rem;
+            /* justify-content: space-between; Logo solda, Menü sağda kalsın */
+            /* align-items: center; Dikeyde birbirlerine göre ortalar */
+            align-items: start;
+            
+        }
+
+        footer {
+            background-color: beige;
+        }
+        .links {
+            display: grid;
+            margin-top: 3rem;
+            padding-left: 2rem;
+        }
+        .links a {
+            color: white;
+            padding-top: 1rem;
+            font-size: 2rem;
+
+        }
+
+        .links h2 {
+            font-size: 3rem;
+            color: white;
+            border-bottom: 1px solid blue;
+            
+        }
+
+        .social-icons svg:hover {
+            transform: scale(105%);
+        }
+                /* Ana taşıyıcı flex kalsın (Resim ve Sidebar yan yana olsun) */
+        .blogs {
+            display: flex;
+            align-items: flex-start; /* Elemanların yukarı hizalanmasını sağlar */
+            gap: 20px; /* Aralarında boşluk bırakır */
+            background-color: #f4f4f4;
+        }
+
+        .blogs img {
+            width: 62%;
+            height: 60rem;
+            padding: 0.5rem;
+        }
+
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column; 
+            gap: 20px; 
+            width: 35%;
+            
+        }
+
+        
+        .blog-side-bar {
+            width: 100%; 
+            margin-left: 0; 
+            background-color: rgb(185, 243, 224);
+            border: 1px solid black;
+            padding: 15px;
+            height: 20rem;
+        }
+
+        .blog-side-bar h2 {
+            font-size: 3rem;
+        }
+
+        .blog-side-bar p {
+            font-size: 2rem;
+        }
+
+        .blog-side-bar button {
+            font-size: 2rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #444;
+            width: 100%;
+            color: white;
+        }
+
+        .blog-side-bar button:hover {
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            transition: .5s;
+        }
+
+        .blog-side-bar-nav {
+            display: block; 
+            background-color: #f4f4f4; 
+            padding: 15px;
+            border: 1px solid rgb(233, 209, 209);
+            height: 20rem;
+            
+        }
+
+        .blog-side-bar-nav h2 {
+            font-size: 3rem;
+
+        }
+
+        .blog-side-bar-nav span,i,a {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2rem;
+            color: #444;
+            margin-top: 1rem;
+            text-decoration: none;
+            
+        }
+
+        .blog-side-bar-nav li {
+            border-bottom: 1px solid #444;
+        }
+
+        .blogs-text i,span {
+            
+            font-size: 1.5rem;
+        }
+
+        .blogs-text p {
+            width: 62%;
+            padding: 0.5rem;
+            background-color: #f4f4f4;
+        }
+
+        .blogs-text h2 {
+            font-size: 3rem;
+            width: 62%;
+        }

@@ -1,2 +1,2 @@
 # sattnews
-a news site
+news site test
