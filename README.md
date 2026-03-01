@@ -1,0 +1,2 @@
+# sattnews
+a news site
