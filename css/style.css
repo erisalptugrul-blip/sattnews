@@ -23,7 +23,8 @@
             padding: 20px 0;
             flex-wrap: wrap;
         }
-    
+       
+
         header {
             background-color: beige;
         }
@@ -97,9 +98,10 @@
         color: white;
     }
 
-    .news {
+    .news ul {
         display: grid;
         grid-template-columns: repeat(3 / 1fr);
+        gap: 3rem;
     }
     .container-grid {
             width: 90%; /* Küçük ekranlarda kenarlardan %5 pay bırakır */
@@ -115,10 +117,13 @@
         width: 100%;
     }
     .news img {
-        /* Buradaki genişlik ve yüksekliği istediğin gibi sabitleyebilirsin */
-        width: 35rem; 
-        height: 30rem;
-        
+            /* Sabit width: 35rem; yerine bunu kullan: */
+        width: 100%; 
+        max-width: 100%; /* Kutusundan asla taşmasın */
+        height: 30rem; /* Yüksekliği sabit tutabilirsin */
+        object-fit: cover; 
+        border-radius: 4px;
+        display: block; /* Altındaki boşluğu temizler */
         /* Fotoğraf ne olursa olsun kutuya sığdırır ve sünmesini engeller */
         object-fit: cover; 
         
@@ -130,6 +135,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
         margin-top: 1rem;
+        
                
     }
     
@@ -140,6 +146,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     }
 
     .news h3 {
@@ -308,3 +315,243 @@
             font-size: 3rem;
             width: 62%;
         }
+@media (max-width: 1000px) {
+    .news ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+    }
+    .footer-wrapper {
+        grid-template-columns: 1fr !important; /* 4'ten 1'e düşür */
+        text-align: center;
+        gap: 3rem;
+        padding: 3rem 2rem;
+    }
+
+    /* 2. İçindeki Tüm Bölümleri Ortala */
+    .footer-wrapper div {
+        margin-left: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+    }
+
+    /* 3. Logo ve Metin Ayarı */
+    .footer-logo img {
+        width: 180px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo p {
+        font-size: 1.6rem !important;
+        line-height: 1.5;
+    }
+
+    /* 4. Form (Abone Ol) Ayarı */
+    .footer-form h2 {
+        font-size: 3.5rem !important;
+        display: inline-block;
+        border-bottom: 2px solid blue;
+        
+    }
+
+    .footer-form input {
+        width: 100%;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 2rem;
+    }
+
+    /* 5. Linkler Bölümü */
+    .links {
+        padding-left: 0 !important; /* Masaüstündeki kaymayı sıfırla */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links h2 {
+        color: black !important;
+        margin-bottom: 1rem;
+    }
+
+    .links a {
+        padding: 0.8rem 0;
+        font-size: 1.8rem !important;
+    }
+
+    /* 6. Sosyal Medya İkonları */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 2rem;
+    }
+
+    .social-icons svg {
+        width: 40px; /* Mobilde biraz küçültelim */
+        height: 40px;
+    }
+
+}
+ /* TABLET VE MOBİL DÜZENLEMELERİ (768px ve altı) */
+@media (max-width: 768px) {
+    
+    /* 1. HEADER & NAVBAR: Menüyü alt alta getir ve ortala */
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* Menü elemanları mobilde alt alta */
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+    }
+
+    /* 2. BACKGROUND (HERO) ALANI: Yazıları ve resmi düzenle */
+    #background {
+        height: auto; /* Mobilde içeriğe göre uzasın */
+        min-height: 500px;
+        padding: 40px 20px;
+        background-attachment: scroll; /* Mobilde performans için sabitliği kaldır */
+    }
+
+    #back-text {
+        margin-left: 0 !important; /* Masaüstündeki 15rem'i sıfırlıyoruz */
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #back-text h1 {
+        font-size: 2.2rem;
+    }
+
+    #back-text p {
+        width: 100% !important;
+        font-size: 1.6rem;
+    }
+    
+    .news ul {
+        display: grid !important; /* !important ile üzerine yazılmasını engelle */
+        grid-template-columns: 1fr !important; /* Zorla tek sütun yap */
+        gap: 2rem !important;
+    }
+
+    .news li {
+        width: 100%; /* Kartlar tam genişlik olsun */
+        margin-bottom: 2rem;
+        
+        
+    }
+
+    .news img {
+        width: 100% !important; /* Resimlerin taşmasını kesin olarak engeller */
+        height: auto; /* Oranı korur */
+    }
+}
+
+
+    /* 4. FOOTER: Yan yana olan kısımları alt alta diz */
+    @media (max-width: 768px) {
+    /* 1. Tüm Footer'ı Tek Sütun Yap */
+    .footer-wrapper {
+        grid-template-columns: 1fr !important; /* 4'ten 1'e düşür */
+        text-align: center;
+        gap: 3rem;
+        padding: 3rem 2rem;
+    }
+
+    /* 2. İçindeki Tüm Bölümleri Ortala */
+    .footer-wrapper div {
+        margin-left: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+    }
+
+    /* 3. Logo ve Metin Ayarı */
+    .footer-logo img {
+        width: 180px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo p {
+        font-size: 1.6rem !important;
+        line-height: 1.5;
+    }
+
+    /* 4. Form (Abone Ol) Ayarı */
+    .footer-form h2 {
+        font-size: 3.5rem !important;
+        display: inline-block;
+        border-bottom: 2px solid blue;
+        
+    }
+
+    .footer-form input {
+        width: 100%;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 2rem;
+    }
+
+    /* 5. Linkler Bölümü */
+    .links {
+        padding-left: 0 !important; /* Masaüstündeki kaymayı sıfırla */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links h2 {
+        color: black !important;
+        margin-bottom: 1rem;
+    }
+
+    .links a {
+        padding: 0.8rem 0;
+        font-size: 1.8rem !important;
+    }
+
+    /* 6. Sosyal Medya İkonları */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 2rem;
+    }
+
+    .social-icons svg {
+        width: 40px; /* Mobilde biraz küçültelim */
+        height: 40px;
+    }
+
+}
+
+/* ÇOK KÜÇÜK EKRANLAR İÇİN EKSTRA (480px) */
+@media (max-width: 480px) {
+    html {
+        font-size: 8px; /* Yazıları biraz daha küçültmek için */
+    }
+    
+    #back-text h1 {
+        font-size: 2rem;
+    }
+}
